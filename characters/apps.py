@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class CaractersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'caracters'
+    name = 'characters'
