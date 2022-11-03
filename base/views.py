@@ -1,7 +1,7 @@
 from rest_framework import  viewsets
 
 
-class GeneralListApiView(viewsets.ModelViewSet):
+class GeneralViewSet(viewsets.ModelViewSet):
     serializer_class = None
 
     def get_queryset(self):
