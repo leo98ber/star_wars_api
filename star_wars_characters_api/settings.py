@@ -39,7 +39,7 @@ BASE_APPS = [
     'django.contrib.staticfiles',
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = ['movies', 'base', 'characters']
 
 THIRD_APPS = ['rest_framework',
               'simple_history', 'drf_yasg']
