@@ -1,12 +1,8 @@
 from rest_framework.routers import DefaultRouter
-from products.api.viewsets.general_views import *
-from products.api.viewsets.product_viewsets import ProductViewSet
+
+from characters.api.viewsets.characters_views import CharacterViewSet
 
 router = DefaultRouter()
 
-router.register(r'products', ProductViewSet, basename='products')
-router.register(r'measure-unit', MeasureUnitViewSet, basename='measure_unit')
-router.register(r'indicators', IndicatorViewSet, basename='indicators')
-router.register(r'category-products', CategoryProductViewSet, basename='category_products')
-
+router.register(r'characters', CharacterViewSet, basename='characters')
 urlpatterns = router.urls
