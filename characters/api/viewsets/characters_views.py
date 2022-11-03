@@ -7,10 +7,10 @@ from rest_framework.response import Response
 
 
 class CharacterViewSet(GeneralViewSet):
-    serializer_class = CharacterSerializer
 
-
-class FilterCharacterViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    This class is the base of the CRUD to create characters and also contains the option to filter
+    """
     serializer_class = ListCharacterSerializer
     queryset = serializer_class.Meta.model.objects.all()
 
@@ -18,9 +18,11 @@ class FilterCharacterViewSet(viewsets.ReadOnlyModelViewSet):
 
     search_fields = ['name', 'performer']
 
-    @action(detail=False, methods=['post'])
-    def create_character(self, request):
-        serializer = self.serializer_class(data=request.data)
+    def create(self, request, **kwargs):
+        """
+        This method is used to create with a different serializer
+        """
+        serializer = CharacterSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response({'message': 'Character created succesffully!'}, status=status.HTTP_201_CREATED)
