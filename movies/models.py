@@ -21,7 +21,7 @@ class Film(BaseModel):
     productor = models.CharField(max_length=150, blank=False, null=False, default='')
     director = models.CharField(max_length=150, blank=False, null=False, default='')
     company_producer = models.CharField(max_length=150, blank=True, null=True, default='')
-    release_date = models.CharField(max_length=150, blank=True, null=True, default='')
+    release_date = models.DateField(max_length=150, blank=True, null=True, default='')
     planets = models.ManyToManyField(Planet)
 
     def __str__(self):
