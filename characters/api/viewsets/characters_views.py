@@ -1,12 +1,9 @@
-from rest_framework import viewsets, status, generics
-from rest_framework import viewsets, filters
+from rest_framework import viewsets, filters, status
+from rest_framework.decorators import action
 
 from base.views import GeneralViewSet
 from characters.api.serializers.characters_serializers import CharacterSerializer, ListCharacterSerializer
-from characters.models import Character
 from rest_framework.response import Response
-
-from movies.api.serializers.movies_serializers import FilmSerializer
 
 
 class CharacterViewSet(GeneralViewSet):
@@ -20,3 +17,11 @@ class FilterCharacterViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = [filters.SearchFilter]
 
     search_fields = ['name', 'performer']
+
+    @action(detail=False, methods=['post'])
+    def create_character(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'Character created succesffully!'}, status=status.HTTP_201_CREATED)
+        return Response({'message': '', 'error': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
