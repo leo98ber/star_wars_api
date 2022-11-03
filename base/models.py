@@ -1,9 +1,6 @@
 from django.db import models
 
-from simple_history.models import HistoricalRecords
 
-
-# Create your models here.
 class BaseModel(models.Model):
     """Model definition for BaseModel."""
 
@@ -16,6 +13,6 @@ class BaseModel(models.Model):
 
     class Meta:
         """Meta definition for BaseModel."""
-        abstract = True  # No tiene una __str__
+        abstract = True
         verbose_name = 'Modelo Base'
         verbose_name_plural = 'Modelos Base'
