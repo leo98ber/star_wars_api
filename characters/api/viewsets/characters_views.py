@@ -1,7 +1,7 @@
 from rest_framework import viewsets, status, generics
 from rest_framework import viewsets, filters
 
-from base.views import GeneralListApiView, GeneralViewSet
+from base.views import GeneralViewSet
 from characters.api.serializers.characters_serializers import CharacterSerializer, ListCharacterSerializer
 from characters.models import Character
 from rest_framework.response import Response
