@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from characters.models import Character
-from movies.api.serializers.movies_serializers import FilmSerializer, FilmJoinSerializer
+from movies.api.serializers.movies_serializers import FilmJoinSerializer
 from movies.models import Film
 
 
