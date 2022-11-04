@@ -126,8 +126,8 @@ class PlanetTestCase(TestCase):
         self.assertIs(type(result), list)
 
         for character in result:
-            self.assertIn('id', result)
-            self.assertIn('name', result)
-            self.assertIn('state', result)
-            self.assertIn('location', result)
+            self.assertIn('id', character)
+            self.assertIn('name', character)
+            self.assertIn('state', character)
+            self.assertIn('location', character)
             break
