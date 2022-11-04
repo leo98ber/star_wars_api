@@ -25,5 +25,5 @@ class CharacterViewSet(GeneralViewSet):
         serializer = CharacterSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({'message': 'Character created succesffully!'}, status=status.HTTP_201_CREATED)
-        return Response({'message': '', 'error': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'message': 'Character created successfully!', 'content': serializer.data}, status=status.HTTP_201_CREATED)
+        return Response({'error': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
