@@ -15,6 +15,9 @@ from characters.models import Character
 
 
 class CharacterTestCase(TestCase):
+    """
+    Test to check the proper functioning of the character crud endpoints
+    """
     def setUp(self):
         client = APIClient()
 
