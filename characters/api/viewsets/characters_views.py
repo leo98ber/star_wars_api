@@ -1,5 +1,4 @@
-from rest_framework import viewsets, filters, status
-from rest_framework.decorators import action
+from rest_framework import filters, status
 
 from base.views import GeneralViewSet
 from characters.api.serializers.characters_serializers import CharacterSerializer, ListCharacterSerializer
