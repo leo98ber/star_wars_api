@@ -11,3 +11,11 @@ In addition to this there is also the possibility of creating movies with their 
 To know this in depth, you can enter {{url}}/swagger/
 
 This url provides information about the endpoints and models of the project
+
+
+To use the server it is recommended to use the following link in postman:
+
+https://www.getpostman.com/collections/0c736d32ede962dece22
+
+However, you can also use the django interface or the swagger interface.
+
